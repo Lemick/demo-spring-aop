@@ -17,7 +17,7 @@ public class BlogPostDAO {
             new BlogPost(Instant.parse("2020-02-15T10:00:00Z"), "Integration tests with Spring")
     );
 
-    public List<BlogPost> findAll(DateRange dateRange) {
+    public List<BlogPost> findByCreationDate(DateRange dateRange) {
         return blogPosts.stream()
                 .filter(post -> post.getCreationDate().isAfter(dateRange.getStart()) && post.getCreationDate().isBefore(dateRange.getEnd()))
                 .collect(Collectors.toList());

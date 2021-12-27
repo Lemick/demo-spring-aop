@@ -25,7 +25,7 @@ public class BlogPostController {
             @RequestParam("end") @NotNull Instant end) {
 
         DateRange dateRange = new DateRange(start, end);
-        List<BlogPost> blogPosts = blogPostDAO.findAll(dateRange);
+        List<BlogPost> blogPosts = blogPostDAO.findByCreationDate(dateRange);
         return BlogPostsDTO.builder().blogPosts(blogPosts).build();
     }
 }

@@ -16,5 +16,4 @@ public class BlogPostsDTO implements IDateRangeFiltered {
 
     private DateRange dateRange;
     private List<BlogPost> blogPosts;
-
 }
